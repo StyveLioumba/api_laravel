@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\APIHelpers;
+use App\Http\Requests\SaveProduitRequest;
 use App\Produit;
 use Illuminate\Http\Request;
 
@@ -35,10 +36,10 @@ class ProduitController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param SaveProduitRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(SaveProduitRequest $request)
     {
         $produit=new Produit();
         $produit->name=$request->name;
